@@ -267,6 +267,25 @@
    RESPONSIVE
 ══════════════════════════════════════════ */
 
+/* Mid screens — ≤1024px: declutter polaroids */
+@media (max-width: 1024px) {
+
+  /* Hide illustration, purple, and orange polaroids */
+  .polaroid--2,
+  .polaroid--7,
+  .polaroid--8 {
+    display: none;
+  }
+
+  /* Push pale pink further left and blue further right */
+  .polaroid--6 { left: 6%;  top: 54%; }
+  .polaroid--9 { left: 48%; top: 54%; }
+
+  .polaroids {
+    min-height: 580px;
+  }
+}
+
 /* Tablet — ≤768px */
 @media (max-width: 768px) {
 

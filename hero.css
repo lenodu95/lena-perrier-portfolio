@@ -147,6 +147,12 @@
    RESPONSIVE — ≤768px (mobile: light, minimal)
 ══════════════════════════════════════════ */
 
+@media (max-width: 1024px) {
+  .hero__bio {
+    max-width: 360px;
+  }
+}
+
 @media (max-width: 768px) {
   .hero {
     background-image: url('./assets/background_mobile.png');

@@ -669,9 +669,13 @@
    Design reference width: 815px
 ══════════════════════════════════════════ */
 
+@container (max-width: 850px) {
+  .cb-visuals-group,
+  .cleo-visuals-group { transform: translate(-50%, -50%) scale(0.92); }
+}
 @container (max-width: 750px) {
   .cb-visuals-group,
-  .cleo-visuals-group { transform: translate(-50%, -50%) scale(0.88); }
+  .cleo-visuals-group { transform: translate(-50%, -50%) scale(0.78); }
 
   /* Hide side elements, enlarge main visual */
   .cb-visual-card,
@@ -684,15 +688,15 @@
 }
 @container (max-width: 620px) {
   .cb-visuals-group,
-  .cleo-visuals-group { transform: translate(-50%, -50%) scale(0.74); }
+  .cleo-visuals-group { transform: translate(-50%, -50%) scale(0.64); }
 }
 @container (max-width: 500px) {
   .cb-visuals-group,
-  .cleo-visuals-group { transform: translate(-50%, -50%) scale(0.58); }
+  .cleo-visuals-group { transform: translate(-50%, -50%) scale(0.50); }
 }
 @container (max-width: 380px) {
   .cb-visuals-group,
-  .cleo-visuals-group { transform: translate(-50%, -50%) scale(0.44); }
+  .cleo-visuals-group { transform: translate(-50%, -50%) scale(0.38); }
 }
 
 /* Re-apply hover lifts on top of the scaled group's children */
@@ -718,6 +722,16 @@
 
   .cleo-visual-main {
     width: 340px;
+  }
+
+  .prismic-visual-center {
+    width: 95%;
+  }
+}
+
+@media (max-width: 1300px) {
+  .prismic-visual-center {
+    width: 95%;
   }
 }
 

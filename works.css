@@ -482,7 +482,7 @@
 }
 
 .prismic-visual-center {
-  width: 76%;
+  width: 84%;
   height: auto;
   display: block;
   position: relative;
@@ -539,6 +539,13 @@
 
 .prismic-overlay--open .prismic-overlay__card {
   transform: translateY(0);
+}
+
+.prismic-overlay__illustration {
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 .prismic-overlay__title {
@@ -702,6 +709,17 @@
 /* ══════════════════════════════════════════
    CB-CARD RESPONSIVE
 ══════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+  .cleo-visual-left,
+  .cleo-visual-right {
+    display: none;
+  }
+
+  .cleo-visual-main {
+    width: 340px;
+  }
+}
 
 @media (max-width: 768px) {
   .cb-panel--right {
@@ -917,5 +935,66 @@
   display: block;
   margin-top: 0;
   position: relative;
+  left: 4px;
   z-index: 2;
+}
+
+.closing__contact {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  margin-top: var(--sp-6);
+}
+
+.closing__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.closing__link:hover {
+  text-decoration: none;
+}
+
+.closing__link .material-symbols-outlined {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.closing__icon-linkedin {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════════
+   SCROLL REVEAL
+══════════════════════════════════════════ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger cards */
+.works__stack .reveal:nth-child(2) { transition-delay: 0.1s; }
+.works__stack .reveal:nth-child(3) { transition-delay: 0.2s; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

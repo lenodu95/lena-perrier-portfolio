@@ -105,6 +105,12 @@
   font-size: 16px;
   font-weight: var(--weight-regular);
   line-height: var(--leading-normal);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hero__scroll:hover {
+  text-decoration: none;
 }
 
 .hero__scroll-icon {

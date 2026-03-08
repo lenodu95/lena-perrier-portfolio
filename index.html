@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lena Perrier — Product Designer</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Outfit:wght@600;700;800&display=swap" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_downward,home" />
+
+  <!-- Project styles -->
+  <link rel="stylesheet" href="global.css" />
+  <link rel="stylesheet" href="nav.css" />
+  <link rel="stylesheet" href="hero.css" />
+  <link rel="stylesheet" href="works.css" />
+</head>
+<body>
+
+  <!-- ══ NAV ══ -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="/" class="nav-btn nav-btn--home nav-btn--active" aria-label="Home">
+        <span class="material-symbols-outlined" aria-hidden="true">home</span>
+        <span class="nav-btn__label">Home</span>
+      </a>
+      <div class="nav__right">
+        <a href="#works" class="nav-btn nav-btn--text">Works</a>
+        <a href="./about.html" class="nav-btn nav-btn--text">Me</a>
+        <a href="./cv/cv.html" class="nav-btn nav-btn--resume" target="_blank" rel="noopener">Resume</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero">
+    <img class="hero__lena"
+         src="./assets/lena.png"
+         alt="Lena Perrier with illustrated character on her shoulder" />
+    <img class="hero__character-mobile"
+         src="./assets/character.png"
+         alt=""
+         aria-hidden="true" />
+
+    <div class="hero__content">
+      <h1 class="hero__name">Lena<br>Perrier</h1>
+      <div class="hero__bio">
+        <p>I design AI products people actually want to use. Currently at Prismic, helping marketers create content that lands.</p>
+      </div>
+    </div>
+
+    <div class="hero__scroll" aria-hidden="true">
+      <span class="hero__scroll-icon">
+        <span class="material-symbols-outlined">arrow_downward</span>
+      </span>
+      <span>Scroll to<br>know more</span>
+    </div>
+  </section>
+
+  <!-- ══ WORKS ══ -->
+  <section class="works" id="works" aria-label="Selected work">
+    <p class="text-eyebrow section-eyebrow">Selected Work</p>
+    <div class="works__stack">
+
+      <!-- Card 1 — Prismic -->
+      <div class="cb-card prismic-card" onclick="document.getElementById('prismic-overlay').classList.add('prismic-overlay--open')" role="button" tabindex="0">
+        <div class="cb-panel cb-panel--left">
+          <div class="cb-inner--left">
+            <div class="cb-content">
+              <h2 class="cb-title">Prismic</h2>
+              <p class="cb-desc">Redesigning the AI writing experience for marketing teams, from blank page to on-brand content in seconds.</p>
+              <hr class="cb-divider" />
+              <ul class="cb-stats">
+                <li>Product Design Lead</li>
+                <li>2023 — ongoing</li>
+                <li>AI content management</li>
+              </ul>
+              <hr class="cb-divider" />
+              <div class="cb-logos">
+                <img src="./assets/logo_prismic.png" class="prismic-logo-img" alt="Prismic" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cb-panel cb-panel--right">
+          <div class="cb-inner--right">
+            <img src="./assets/visual_center_prismic_card 19.38.27.png" class="prismic-visual-center" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 — Crystal Box -->
+      <a href="./crystal-box.html" class="cb-card">
+        <div class="cb-panel cb-panel--left">
+          <div class="cb-inner--left">
+            <div class="cb-content">
+              <h2 class="cb-title">Crystal Box</h2>
+              <p class="cb-desc">Designing new AI forecasting tool to improve sales forecast decisions</p>
+              <hr class="cb-divider" />
+              <ul class="cb-stats">
+                <li>9 months project</li>
+                <li>+100 user interviews</li>
+                <li>4 companies</li>
+              </ul>
+              <hr class="cb-divider" />
+              <div class="cb-logos">
+                <img src="./assets/Crystal box_homepage/Logos/louis vuitton.png" alt="Louis Vuitton" />
+                <img src="./assets/Crystal box_homepage/Logos/michelin.png"      alt="Michelin" />
+                <img src="./assets/Crystal box_homepage/Logos/decathlon.png"     alt="Decathlon" />
+                <img src="./assets/Crystal box_homepage/Logos/renault.png"       alt="Renault Group" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cb-panel cb-panel--right">
+          <div class="cb-inner--right">
+            <div class="cb-visuals">
+              <div class="cb-visuals-group">
+                <img src="./assets/Crystal box_homepage/Sales history image.png" class="cb-visual-main" alt="" />
+                <img src="./assets/Crystal box_homepage/Container.png"           class="cb-visual-card" alt="" />
+                <img src="./assets/Crystal box_homepage/Increase.png"            class="cb-visual-badge" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 3 — Cléo Chatbot -->
+      <a href="./cleo.html" class="cb-card cleo-card">
+        <div class="cb-panel cb-panel--left">
+          <div class="cb-inner--left">
+            <div class="cb-content">
+              <h2 class="cb-title">Cléo Chatbot</h2>
+              <p class="cb-desc"><em>Bootcamp:</em> Designed chatbot interactions for job seekers aspiring to do a career switch</p>
+              <hr class="cb-divider" />
+              <ul class="cb-stats">
+                <li>Design Thinking</li>
+                <li>6 user tests</li>
+                <li>Pitched on stage</li>
+              </ul>
+              <hr class="cb-divider" />
+              <div class="cb-logos">
+                <img src="./assets/Crystal box_homepage/Cleo_homepage/pimpmyapp_logo.png"     alt="Pimp My App" />
+                <img src="./assets/Crystal box_homepage/Cleo_homepage/france_travail_logo.png" alt="France Travail" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cb-panel cb-panel--right">
+          <div class="cb-inner--right">
+            <div class="cb-visuals">
+              <div class="cleo-visuals-group">
+                <img src="./assets/Crystal box_homepage/Cleo_homepage/main_visual.png"  class="cleo-visual-main"  alt="" />
+                <img src="./assets/Crystal box_homepage/Cleo_homepage/left_visual.png"  class="cleo-visual-left"  alt="" />
+                <img src="./assets/Crystal box_homepage/Cleo_homepage/right_visual.png" class="cleo-visual-right" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       GALLERY
+       ════════════════════════════════════════ -->
+  <section class="gallery">
+    <p class="text-eyebrow section-eyebrow">About Me</p>
+    <div class="gallery__grid">
+
+      <!-- Top row -->
+      <div class="gallery__photo gallery__photo--top">
+        <img src="./assets/Gallery/photo1.png" alt="" />
+      </div>
+      <div class="gallery__photo gallery__photo--top">
+        <img src="./assets/Gallery/photo2.png" alt="" />
+      </div>
+
+      <!-- Bottom row -->
+      <div class="gallery__text-card">
+        <div class="gallery__text-inner">
+          <div class="gallery__text-box">
+            <h2 class="gallery__text-title">Designing less boring software</h2>
+            <div class="gallery__text-body">
+              <p>I came to product design after three years at Salesforce, where I learned what enterprise software actually costs its users.</p>
+              <p>Since then, I have been designing for users that have 7 screens open at the same time. I focus on legibility and on giving users the right information to trust the tools they rely on, without ever compromising on the fun, appealing side of design.</p>
+            </div>
+            <div class="gallery__buttons">
+              <a href="./about.html" class="nav-btn nav-btn--text">Learn More About Me</a>
+              <a href="./cv/cv.html" class="nav-btn nav-btn--resume" target="_blank" rel="noopener">Open Resume</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery__photo gallery__photo--bottom">
+        <img src="./assets/Gallery/photo3.png" alt="" />
+      </div>
+      <div class="gallery__photo gallery__photo--bottom">
+        <img src="./assets/Gallery/photo4.png" alt="" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       CLOSING
+       ════════════════════════════════════════ -->
+  <section class="closing">
+    <div class="closing__content">
+      <h2 class="closing__title">Thank You for Visiting</h2>
+      <img src="./assets/end_illustration.png" class="closing__illustration" alt="" />
+    </div>
+  </section>
+
+  <!-- Prismic overlay -->
+  <div id="prismic-overlay" class="prismic-overlay" onclick="if(event.target===this)this.classList.remove('prismic-overlay--open')">
+    <div class="prismic-overlay__card">
+      <p class="prismic-overlay__title">Oops, nothing to see here yet</p>
+      <p class="prismic-overlay__body">This case study is currently being written. Please reach out to me directly if you want to know more about this project.</p>
+      <button class="prismic-overlay__close" onclick="document.getElementById('prismic-overlay').classList.remove('prismic-overlay--open')">Got it</button>
+    </div>
+  </div>
+
+  <script>
+    const nav = document.querySelector('.nav');
+    const hero = document.querySelector('.hero');
+
+    const observer = new IntersectionObserver(
+      ([entry]) => nav.classList.toggle('nav--scrolled', !entry.isIntersecting),
+      { threshold: 0 }
+    );
+
+    observer.observe(hero);
+
+    /* Prismic card — open overlay with Enter/Space */
+    document.querySelector('.prismic-card').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        document.getElementById('prismic-overlay').classList.add('prismic-overlay--open');
+      }
+    });
+
+    /* Close overlay with Escape */
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.getElementById('prismic-overlay').classList.remove('prismic-overlay--open');
+      }
+    });
+  </script>
+</body>
+</html>

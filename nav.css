@@ -1,0 +1,155 @@
+@import './tokens-v2.css';
+
+/* ══════════════════════════════════════════
+   NAV — Fixed top bar
+══════════════════════════════════════════ */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-nav);
+  background: transparent;
+  box-shadow: none;
+  padding-block: 20px 16px;
+  isolation: isolate;
+}
+
+.nav::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transition: backdrop-filter var(--transition-base), background var(--transition-base);
+}
+
+.nav--scrolled::before {
+  backdrop-filter: blur(var(--nav-blur));
+  -webkit-backdrop-filter: blur(var(--nav-blur));
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, rgba(0,0,0,0.6) 50%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 0%, rgba(0,0,0,0.6) 50%, transparent 100%);
+}
+
+.nav__inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  padding-inline: var(--layout-pad-x);
+}
+
+/* ══════════════════════════════════════════
+   NAV BUTTON — Base
+══════════════════════════════════════════ */
+
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  height: var(--nav-height);
+  padding: var(--nav-btn-padding);
+  border-radius: var(--nav-btn-radius);
+  font-size: var(--nav-btn-font-size);
+  font-weight: var(--nav-btn-font-weight);
+  font-family: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background var(--transition-fast);
+}
+
+/* ══════════════════════════════════════════
+   NAV BUTTON VARIANTS
+══════════════════════════════════════════ */
+
+/* Home — always E6E5E5 pill */
+.nav-btn:hover {
+  text-decoration: none;
+}
+
+.nav-btn--home {
+  gap: var(--sp-1);
+  background: var(--nav-btn-bg-hover);
+  color: var(--color-text-primary);
+}
+
+.nav-btn--home:hover {
+  background: var(--nav-btn-bg-hover);
+}
+
+.nav-btn--active,
+.nav-btn--active:hover {
+  background: #ffffff;
+  cursor: default;
+}
+
+/* Works / Me — white at rest, darkens on hover */
+.nav-btn--text {
+  background: #ffffff;
+  color: var(--color-text-secondary);
+}
+
+.nav-btn--text:hover {
+  background: var(--nav-btn-bg);
+}
+
+/* Resume — dark pill */
+.nav-btn--resume {
+  background: var(--nav-btn-resume-bg);
+  color: var(--color-on-dark);
+}
+
+.nav-btn--resume:hover {
+  background: var(--color-dark-hover);
+}
+
+/* ══════════════════════════════════════════
+   RIGHT GROUP
+══════════════════════════════════════════ */
+
+.nav__right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--sp-1);
+}
+
+/* ══════════════════════════════════════════
+   MATERIAL SYMBOLS ICON
+══════════════════════════════════════════ */
+
+.nav-btn .material-symbols-outlined {
+  font-size: 20px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE — ≤ 768px
+   Home: icon-only (hide label)
+══════════════════════════════════════════ */
+
+/* ══════════════════════════════════════════
+   RESPONSIVE — 768px–1024px (tablet / small desktop)
+   Tighten padding so all items stay on one line
+══════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+  .nav-btn {
+    padding: 10px 12px;
+  }
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE — ≤ 768px
+   Home: icon-only (hide label)
+══════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .nav-btn--home .nav-btn__label {
+    display: none;
+  }
+}

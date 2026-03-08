@@ -1,0 +1,10 @@
+# Claude Code
+.claude/
+
+# macOS
+.DS_Store
+Thumbs.db
+
+# Test/scratch files
+test-*.html
+design-audit.md

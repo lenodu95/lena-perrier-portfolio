@@ -1,0 +1,345 @@
+/* ============================================================
+   LENA PERRIER — Design Tokens v2
+   Updated with exact values extracted from Figma source file
+   
+   FONT NOTE:
+   "Neulis" is a paid font (used in your Figma for the hero name).
+   Two options:
+     A) Purchase Neulis and self-host: https://befonts.com/neulis-font.html
+     B) Use "Outfit" as a free substitute — very similar proportions.
+   This file defaults to Neulis with Outfit as fallback.
+   Change --font-display below once you've decided.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Outfit:wght@600;700;800&display=swap');
+
+:root {
+
+  /* ══════════════════════════════════════════
+     COLOR — EXACT FIGMA VALUES
+  ══════════════════════════════════════════ */
+
+  /* Brand — Orange (Crystal Box, primary actions) */
+  --color-orange:        #E07B3F;
+  --color-orange-mid:    #F0B48A;
+  --color-orange-pale:   #FDF0E8;
+
+  /* Brand — Lavender (Cléo, secondary) */
+  --color-lavender:      #BFB0F0;
+  --color-lavender-mid:  #D4CAFC;
+  --color-lavender-pale: #F0EEFF;
+
+  /* Brand — Yellow (accent only) */
+  --color-yellow:        #F0C840;
+  --color-yellow-pale:   #FFFDE8;
+
+  /* ── Neutrals (corrected from Figma) ──
+     #23161E = your actual dark (Resume button, extracted from Figma)
+     Harmonized: use ONE dark value everywhere.
+     #000000 found in layers is likely an auto-fill — do not use.
+  */
+  --color-dark:           #23161E;   /* Figma exact: Resume button fill */
+  --color-dark-hover:     #352030;   /* Lightened variant for hover */
+
+  --color-text-primary:   #23161E;   /* Same as dark — unified */
+  --color-text-secondary: #7A7068;   /* Warm mid-grey */
+  --color-text-tertiary:  #B0A89E;   /* Placeholder, inactive */
+
+  /* ── Surfaces ── */
+  --color-surface:        #F4F1EE;   /* Page background — warm off-white */
+  --color-card:           #FFFFFF;   /* Pure white cards (info panels, About card) */
+  --color-nav-bg-light:   #E6E5E5;   /* Figma exact: Home/Works/Me nav button fill */
+
+  /* ── Borders ── */
+  --color-border:         rgba(35, 22, 30, 0.08);
+  --color-border-mid:     rgba(35, 22, 30, 0.14);
+  --color-border-strong:  rgba(35, 22, 30, 0.28);
+
+  /* ── Inverted (dark sections) ── */
+  --color-on-dark:              #FFFFFF;
+  --color-on-dark-secondary:    rgba(255, 255, 255, 0.65);
+  --color-on-dark-tertiary:     rgba(255, 255, 255, 0.35);
+  --color-on-dark-border:       rgba(255, 255, 255, 0.10);
+  --color-on-dark-border-hover: rgba(255, 255, 255, 0.20);
+
+  /* Polaroid frame tints (from About page) */
+  --color-frame-purple:  #C4AEFF;
+  --color-frame-teal:    #6BCFCF;
+  --color-frame-pink:    #F0A898;
+  --color-frame-green:   #88D4B0;
+  --color-frame-peach:   #F5C090;
+  --color-frame-yellow:  #F0C840;
+
+
+  /* ══════════════════════════════════════════
+     TYPOGRAPHY — CORRECTED FROM FIGMA
+
+     WHAT WAS WRONG:
+     • Hero used Neulis SemiBold 128px
+     • Hero subtitle used DM Sans SemiBold 22px
+       → SemiBold is too heavy for a subtitle
+     • Project title used DM Sans Light 24px
+       → Light is too thin for a title — inverted logic
+     • Section headings had no defined size between 128px and 24px
+     • Letter spacing 0.26px was applied inconsistently on some nodes
+
+     WHAT'S FIXED:
+     • Neulis (→ Outfit fallback) for all display headings only
+     • DM Sans for ALL body, labels, UI text
+     • Weights corrected: titles Bold/SemiBold, body Regular/Medium
+     • Full type scale defined with named stops
+     • Letter spacing only on eyebrow/label text
+  ══════════════════════════════════════════ */
+
+  --font-display: 'Neulis', 'Outfit', sans-serif;   /* Hero, section titles */
+  --font-body:    'DM Sans', sans-serif;             /* Everything else */
+
+  /* ── Type Scale ──
+     Based on your Figma nodes:
+     128px (hero name) → needs stops at 48, 36, 24, 18, 16, 14, 13, 11
+  */
+  --text-xs:    11px;   /* Eyebrow labels (uppercase, tracked) */
+  --text-sm:    13px;   /* Captions, metadata, logo chips */
+  --text-base:  15px;   /* Default body copy */
+  --text-md:    18px;   /* Card body text — was 18px in your Figma ✓ */
+  --text-lg:    22px;   /* Lead paragraphs — was 22px in your Figma ✓ */
+  --text-xl:    28px;   /* Small section titles */
+  --text-2xl:   36px;   /* Section titles */
+  --text-3xl:   48px;   /* Page-level titles */
+  --text-hero: 128px;   /* Hero name — exact Figma value ✓ */
+
+  /* ── Font Weights (harmonized) ──
+     RULE: heavier weight = more important. Never use Light for titles.
+  */
+  --weight-light:    300;   /* Decoration only — not for headings */
+  --weight-regular:  400;   /* Body copy, descriptions */
+  --weight-medium:   500;   /* UI labels, nav links */
+  --weight-semibold: 600;   /* Sub-headings, card titles */
+                            /* (was wrongly used for body text before) */
+  --weight-bold:     700;   /* Section titles */
+  --weight-black:    800;   /* Hero, display headings */
+
+  /* ── Line Heights ── */
+  --leading-tight:   1.00;   /* Hero name (128px) — very tight */
+  --leading-snug:    1.15;   /* Large headings */
+  --leading-normal:  1.45;   /* UI copy, card text */
+  --leading-relaxed: 1.70;   /* Body paragraphs */
+
+  /* ── Letter Spacing ──
+     RULE: only apply letter-spacing to eyebrow/uppercase labels.
+     Body and heading text: 0 (the 0.26px on project desc was wrong).
+  */
+  --tracking-tight:  -0.03em;   /* Large display headings (128px) */
+  --tracking-normal:  0em;      /* All body and heading text */
+  --tracking-wide:    0.06em;   /* Tags, chips, buttons */
+  --tracking-wider:   0.10em;   /* Eyebrow labels ONLY */
+
+
+  /* ══════════════════════════════════════════
+     SPACING — 8px base grid (unchanged)
+  ══════════════════════════════════════════ */
+
+  --sp-0:  4px;
+  --sp-1:  8px;
+  --sp-2:  16px;
+  --sp-3:  24px;
+  --sp-4:  32px;
+  --sp-5:  40px;
+  --sp-6:  48px;
+  --sp-8:  64px;
+  --sp-10: 80px;
+  --sp-12: 96px;
+
+  --layout-max-width: 1160px;
+  --layout-pad-x: clamp(20px, 5vw, 72px);
+
+
+  /* ══════════════════════════════════════════
+     COMPONENT TOKENS — NAV
+     Extracted exactly from Figma
+  ══════════════════════════════════════════ */
+
+  --nav-height:          48px;       /* Figma: button height = 47–48px Hug */
+  --nav-bg:              rgba(244, 241, 238, 0.55);
+  --nav-blur:            20px;
+  --nav-btn-bg:          var(--color-nav-bg-light);  /* #E6E5E5 — Works/Me buttons */
+  --nav-btn-bg-hover:    #D8D6D6;
+  --nav-btn-resume-bg:   var(--color-dark);           /* #23161E — Resume button */
+  --nav-btn-radius:      12px;
+  --nav-btn-padding:     12px 16px;   /* Figma: 14px H, 12px V inner padding */
+  --nav-btn-font-size:   14px;
+  --nav-btn-font-weight: var(--weight-medium);
+
+
+  /* ══════════════════════════════════════════
+     COMPONENT TOKENS — PROJECT CARDS
+     Extracted from Figma component structure
+  ══════════════════════════════════════════ */
+
+  /* Card layout */
+  --card-radius:          16px;
+  --card-padding:         var(--sp-5);   /* 40px internal padding */
+  --card-gap:             var(--sp-4);   /* 32px between cards */
+
+  /* Card backgrounds — NOT defined here intentionally.
+     Each project card visual has a unique background:
+     • Crystal Box  → complex radial gradient (orange family) — defined in component CSS
+     • Cléo         → flat var(--color-lavender-pale) — applied inline on the element
+     • Info panels  → var(--color-card) white
+     Build card gradients using the --color-orange-* and --color-lavender-* primitives above. */
+
+  /* Project title (corrected: was Light — now SemiBold) */
+  --card-title-font:      var(--font-body);
+  --card-title-size:      24px;          /* Figma exact ✓ */
+  --card-title-weight:    var(--weight-semibold);   /* FIXED from Light → SemiBold */
+  --card-title-tracking:  var(--tracking-normal);   /* FIXED: removed 0.26px */
+
+  /* Project description */
+  --card-desc-font:       var(--font-body);
+  --card-desc-size:       var(--text-md);    /* 18px — Figma exact ✓ */
+  --card-desc-weight:     var(--weight-regular);   /* FIXED from SemiBold → Regular */
+  --card-desc-tracking:   var(--tracking-normal);  /* FIXED: removed 0.26px */
+  --card-desc-color:      var(--color-text-secondary);
+
+  /* "About me" card — white panel with transparency */
+  --card-about-bg:        rgba(255, 255, 255, 0.84);  /* Figma exact: FFFFFF 84% */
+  --card-about-radius:    8.56px;                     /* Figma exact ✓ */
+
+
+  /* ══════════════════════════════════════════
+     BORDER RADIUS
+  ══════════════════════════════════════════ */
+
+  --radius-sm:     6px;
+  --radius-md:     10px;
+  --radius-lg:     16px;
+  --radius-xl:     24px;
+  --radius-2xl:    32px;
+  --radius-pill:   100px;
+
+
+  /* ══════════════════════════════════════════
+     SHADOWS
+  ══════════════════════════════════════════ */
+
+  --shadow-sm:       0 1px 4px rgba(35, 22, 30, 0.06),
+                     0 2px 10px rgba(35, 22, 30, 0.04);
+  --shadow-md:       0 4px 16px rgba(35, 22, 30, 0.08),
+                     0 8px 32px rgba(35, 22, 30, 0.05);
+  --shadow-lg:       0 8px 32px rgba(35, 22, 30, 0.12),
+                     0 20px 60px rgba(35, 22, 30, 0.08);
+  --shadow-polaroid: 4px 8px 28px rgba(35, 22, 30, 0.22);
+  --shadow-nav:      0 1px 0 rgba(35, 22, 30, 0.08);
+
+
+  /* ══════════════════════════════════════════
+     TRANSITIONS
+  ══════════════════════════════════════════ */
+
+  --transition-fast:   0.15s ease;
+  --transition-base:   0.25s ease;
+  --transition-slow:   0.40s ease;
+  --transition-spring: 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+
+  /* ══════════════════════════════════════════
+     Z-INDEX
+  ══════════════════════════════════════════ */
+
+  --z-base:    0;
+  --z-raised:  10;
+  --z-overlay: 100;
+  --z-nav:     1000;
+  --z-modal:   2000;
+
+}
+
+
+/* ============================================================
+   TYPOGRAPHY UTILITY CLASSES
+   Use these directly in HTML to enforce the system.
+   ============================================================ */
+
+/* Eyebrow — uppercase label above section titles */
+.text-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  line-height: 1;
+}
+
+/* Hero display — Neulis/Outfit, hero name only */
+.text-hero {
+  font-family: var(--font-display);
+  font-size: clamp(72px, 12vw, var(--text-hero));
+  font-weight: var(--weight-black);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+
+/* Page title — large headings (case study hero, about hero) */
+.text-page-title {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-xl), 5vw, var(--text-3xl));
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-snug);
+  letter-spacing: -0.02em;
+}
+
+/* Section title — "My Work", "My Background" headings */
+.text-section-title {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-lg), 3vw, var(--text-2xl));
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-snug);
+  letter-spacing: -0.015em;
+}
+
+/* Card title — "Crystal Box", "Cléo Chatbot" */
+.text-card-title {
+  font-family: var(--font-body);
+  font-size: var(--card-title-size);      /* 24px */
+  font-weight: var(--card-title-weight);  /* SemiBold — FIXED */
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-normal); /* 0 — FIXED */
+}
+
+/* Lead — hero subtitle, intro paragraphs */
+.text-lead {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);              /* 22px */
+  font-weight: var(--weight-regular);     /* Regular — FIXED from SemiBold */
+  line-height: var(--leading-relaxed);
+  letter-spacing: var(--tracking-normal);
+}
+
+/* Body — card descriptions, experience bullets */
+.text-body {
+  font-family: var(--font-body);
+  font-size: var(--text-md);              /* 18px */
+  font-weight: var(--weight-regular);     /* Regular — FIXED from SemiBold */
+  line-height: var(--leading-relaxed);
+  letter-spacing: var(--tracking-normal); /* FIXED: removed 0.26px */
+  color: var(--color-text-secondary);
+}
+
+/* Small — metadata, stats ("9 months project") */
+.text-small {
+  font-family: var(--font-body);
+  font-size: var(--text-base);            /* 15px */
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  color: var(--color-text-secondary);
+}
+
+/* Caption — polaroid labels, footnotes */
+.text-caption {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);              /* 13px */
+  font-weight: var(--weight-regular);
+  color: var(--color-text-tertiary);
+  line-height: var(--leading-normal);
+}

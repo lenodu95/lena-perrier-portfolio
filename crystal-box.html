@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crystal Box — Lena Perrier</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,800;1,9..40,400&family=Outfit:wght@600;700;800&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_back" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="global.css" />
+  <link rel="stylesheet" href="nav.css" />
+  <link rel="stylesheet" href="crystal-box.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav nav--scrolled" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="./index.html" class="nav-btn nav-btn--home nav-btn--text" onclick="history.back(); return false;" aria-label="Go back">
+        <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
+        <span class="nav-btn__label">Back</span>
+      </a>
+      <div class="nav__right">
+        <a href="./index.html#works" class="nav-btn nav-btn--active">Works</a>
+        <a href="./about.html" class="nav-btn nav-btn--text">Me</a>
+        <a href="./cv/cv.html" class="nav-btn nav-btn--resume" target="_blank" rel="noopener">Resume</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- TABLE OF CONTENTS -->
+  <nav class="cb-toc" aria-label="Case study sections">
+    <a href="#scope" class="cb-toc__item cb-toc__item--active" data-target="scope">
+      <span class="cb-toc__line"></span>
+      <span class="cb-toc__label">Project Scope</span>
+    </a>
+    <a href="#challenge" class="cb-toc__item" data-target="challenge">
+      <span class="cb-toc__line"></span>
+      <span class="cb-toc__label">Challenge</span>
+    </a>
+    <a href="#workflow" class="cb-toc__item" data-target="workflow">
+      <span class="cb-toc__line"></span>
+      <span class="cb-toc__label">Workflow</span>
+    </a>
+    <a href="#problem" class="cb-toc__item" data-target="problem">
+      <span class="cb-toc__line"></span>
+      <span class="cb-toc__label">Problem</span>
+    </a>
+    <a href="#opportunity" class="cb-toc__item" data-target="opportunity">
+      <span class="cb-toc__line"></span>
+      <span class="cb-toc__label">Opportunity</span>
+    </a>
+    <a href="#exploration-ml" class="cb-toc__item" data-target="exploration-ml">
+      <span class="cb-toc__line"></span>
+      <span class="cb-toc__label">Exploration 1</span>
+    </a>
+    <a href="#exploration-data" class="cb-toc__item" data-target="exploration-data">
+      <span class="cb-toc__line"></span>
+      <span class="cb-toc__label">Exploration 2</span>
+    </a>
+    <a href="#results" class="cb-toc__item" data-target="results">
+      <span class="cb-toc__line"></span>
+      <span class="cb-toc__label">Results</span>
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="cb-hero">
+    <div class="cb-hero__content">
+
+      <div class="cb-hero__text">
+        <h1 class="cb-hero__headline">Turning AI predictions into clear, explainable, and actionable insights</h1>
+        <p class="cb-hero__body">This project focused on designing Crystal Box, a forecasting tool add-on that helps forecasters at Louis Vuitton, Decathlon, Michelin, and Renault understand why AI makes specific predictions and enrich them with their contextual knowledge.</p>
+        <ul class="cb-hero__list">
+          <li>100+ user interviews (research phase)</li>
+          <li>24 user tests</li>
+          <li>6 iterations</li>
+          <li>Pitched at SAP San Francisco</li>
+        </ul>
+        <p class="cb-hero__body">As a product designer on a multidisciplinary team, I led the UI design and visual direction while collaborating with another product designer on UX strategy, 2 AI researchers, 1 analytics engineer, and forecasters from each partner company.</p>
+      </div>
+
+      <div class="cb-hero__image-wrapper">
+        <img src="./assets/Crystal-box/hero_bg.png" class="cb-hero__bg" alt="" />
+        <img src="./assets/Crystal-box/hero_dashboard.png" class="cb-hero__dashboard" alt="Crystal Box dashboard interface" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CASE STUDY CARDS -->
+  <section class="cb-cards">
+
+    <!-- Card 1 — Project Scope -->
+    <div id="scope" class="cs-card cs-card--centered cb-reveal">
+      <div class="cs-card__left">
+        <h2 class="cs-card__title cs-card__title--lg">Project Scope</h2>
+        <p class="cs-card__subtitle">Sep 2024 – July 2025</p>
+      </div>
+      <div class="cs-card__right">
+        <p class="cs-card__label cs-card__label--strong">Team</p>
+        <ul class="cs-team-list">
+          <li>Product Designer / UX UI Designer: Lena Perrier</li>
+          <li>Product Designer: Nhung N.</li>
+          <li>Product Management: Diane DL.</li>
+          <li>Product Management: Rémi G.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Card 2 — Challenge -->
+    <div id="challenge" class="cs-card cb-reveal">
+      <div class="cs-card__left">
+        <p class="cs-card__label">Challenge</p>
+        <h2 class="cs-card__title cs-card__title--lg">Incite forecasters to rely more on AI predictions</h2>
+      </div>
+      <div class="cs-card__right cs-card__right--body">
+        <p class="cs-card__body">Despite massive investments in AI accuracy, forecasters at Louis Vuitton, Decathlon, Michelin, and Renault are rejecting machine learning predictions.</p>
+        <p class="cs-card__body">This undermines supply chain decisions worth billions of euros.</p>
+      </div>
+    </div>
+
+    <!-- Card 3 — Understanding Workflow -->
+    <div id="workflow" class="cs-card cs-card--workflow cb-reveal">
+      <div class="cs-card__top">
+        <div class="cs-card__left">
+          <p class="cs-card__label">Understanding workflow</p>
+          <h2 class="cs-card__title cs-card__title--lg">Forecasters make contextual based decisions</h2>
+        </div>
+        <div class="cs-card__right cs-card__right--body">
+          <p class="cs-card__body">We started by interviewing and shadowing forecasters to understand their current forecasting process.</p>
+          <ol class="cs-numbered-list">
+            <li>
+              <strong>Gather historical data.</strong>
+              <span>Collect past sales data.</span>
+            </li>
+            <li>
+              <strong>Review baseline predictions.</strong>
+              <span>Analyze operational research and machine learning predictions.</span>
+            </li>
+            <li>
+              <strong>Apply business context.</strong>
+              <span>Incorporate external factors like currency fluctuations, events, and market trends.</span>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div class="cs-card__bottom">
+        <img src="./assets/Crystal-box/workflow_photo.png" class="cs-workflow-photo" alt="" />
+        <p class="cs-workflow-caption">Shadowing forecasters to understand their workflows</p>
+      </div>
+    </div>
+
+    <!-- Card 4 — Problem -->
+    <div id="problem" class="cs-card cs-card--workflow cb-reveal">
+      <div class="cs-card__top">
+        <div class="cs-card__left">
+          <p class="cs-card__label">Problem</p>
+          <h2 class="cs-card__title cs-card__title--lg">Forecasters avoid AI predictions they can't explain or trust</h2>
+        </div>
+        <div class="cs-card__right cs-card__right--body">
+          <div class="cs-subgroup">
+            <p class="cs-subheading">Black box results undermine trust</p>
+            <p class="cs-card__body">Through user interviews we found that forecasters can't explain the reasoning behind AI outputs to stakeholders, making the predictions unusable.</p>
+          </div>
+          <div class="cs-subgroup">
+            <p class="cs-subheading">AI models do miss contextual information</p>
+            <p class="cs-card__body">We used quick &amp; dirty prototypes to further investigate the problem and identified another challenge: unpredictable events whose impact forecasters want to gauge.</p>
+          </div>
+        </div>
+      </div>
+      <div class="cs-problem-visual">
+        <img src="./assets/Crystal-box/problem_bg.png" class="cs-problem-bg" alt="" />
+        <img src="./assets/Crystal-box/problem_dashboard.png" class="cs-problem-dashboard" alt="" />
+      </div>
+      <div class="cs-card__bottom">
+        <img src="./assets/Crystal-box/problem_photo.png" class="cs-photo" alt="" />
+        <p class="cs-photo-caption">Using quick &amp; dirty prototype to better understand forecasters pain points</p>
+      </div>
+    </div>
+
+    <!-- Card 5 — Opportunity -->
+    <div id="opportunity" class="cs-card cb-reveal">
+      <div class="cs-card__left">
+        <p class="cs-card__label">Opportunity</p>
+        <h2 class="cs-card__title cs-card__title--lg">Building transparent and trustworthy AI predictions</h2>
+      </div>
+      <div class="cs-card__right cs-card__right--body">
+        <p class="cs-subheading">Hypothesis</p>
+        <p class="cs-card__body">If we show forecasters which factors influenced the AI model, they will be able to better understand and take into account AI predictions to their forecast.</p>
+        <p class="cs-card__body">If we let forecasters enrich AI models with their knowledge of external events, they will better trust AI results and rely more on AI-driven insights.</p>
+      </div>
+    </div>
+
+    <!-- Card 6 — Design Exploration -->
+    <div id="exploration-ml" class="cs-card cs-card--workflow cb-reveal">
+      <div class="cs-card__top">
+        <div class="cs-card__left">
+          <p class="cs-card__label">Exploration 1</p>
+          <h2 class="cs-card__title cs-card__title--lg">Explaining Machine Learning Results</h2>
+        </div>
+        <div class="cs-card__right cs-card__right--body">
+          <p class="cs-card__body">We conducted tests and iterated on those with 15 forecasters.</p>
+          <p class="cs-card__body">Initial testing revealed that giving forecasters raw numbers of factors going into machine learning predictions weren't enough. Users needed to understand how these factors actually impacted their forecasts.</p>
+          <p class="cs-card__body">I pivoted to providing contextual information and detailed factor evolution to better show impact.</p>
+        </div>
+      </div>
+
+      <!-- Two photos side by side -->
+      <div class="cs-photo-grid">
+        <div class="cs-photo-col">
+          <img src="./assets/Crystal-box/exploration_photo1.png" class="cs-photo-grid__img" alt="" />
+        </div>
+        <div class="cs-photo-col">
+          <img src="./assets/Crystal-box/exploration_photo2.png" class="cs-photo-grid__img" alt="" />
+          <p class="cs-photo-caption">Conducting user tests through a fictional use case</p>
+        </div>
+      </div>
+
+      <!-- Before / After visual -->
+      <div class="cs-before-after">
+        <div class="cs-ba-item">
+          <p class="cs-ba-label">Before</p>
+          <img src="./assets/Crystal-box/before_screen.png" class="cs-ba-screen" alt="" />
+        </div>
+        <div class="cs-ba-item">
+          <p class="cs-ba-label">After</p>
+          <img src="./assets/Crystal-box/after_screen.png" class="cs-ba-screen" alt="" />
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Card 7 — Adding External Data -->
+    <div id="exploration-data" class="cs-card cs-card--workflow cb-reveal">
+      <div class="cs-card__top">
+        <div class="cs-card__left">
+          <p class="cs-card__label">Exploration 2</p>
+          <h2 class="cs-card__title cs-card__title--lg">Adding External Data</h2>
+        </div>
+        <div class="cs-card__right cs-card__right--body">
+          <p class="cs-card__body">Our design challenge was identifying which types of data forecasters needed to layer onto AI predictions.</p>
+          <p class="cs-card__body">Initial tests failed as we assumed forecasters would use news, but they don't follow it.</p>
+          <p class="cs-card__body">Through iterations, we learned they prefer keywords for known events like currency exchange rate evolution or internal data like price changes.</p>
+          <p class="cs-card__body">Forecasters also rejected the feature due to lack of trust to AI results. We added context and let them control which data feeds the AI calculations, which proved successful.</p>
+        </div>
+      </div>
+
+      <img src="./assets/Crystal-box/external_data_visual.png" class="cs-workflow-photo" alt="" />
+
+      <div class="cs-before-after" style="background-image: url('./assets/Crystal-box/external_data_bg.png')">
+        <div class="cs-ba-item">
+          <p class="cs-ba-label">Before</p>
+          <img src="./assets/Crystal-box/external_data_screens_before.png" class="cs-ba-screen" alt="" />
+        </div>
+        <div class="cs-ba-item">
+          <p class="cs-ba-label">After</p>
+          <img src="./assets/Crystal-box/external_data_screens_after.png" class="cs-ba-screen" alt="" />
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Card 8 — Results -->
+    <div id="results" class="cs-card cs-card--centered cb-reveal">
+      <div class="cs-card__left">
+        <p class="cs-card__label">Results</p>
+        <h2 class="cs-card__title cs-card__title--lg">Now I get it!</h2>
+      </div>
+      <div class="cs-card__right">
+        <p class="cs-feedback-label">Companies' feedback</p>
+
+        <blockquote class="cs-blockquote">
+          <p>"At our organization, we have low usage of ML, and both features [explanations and adding external data] could lead to adoption of models that are seemingly well-designed but whose completeness forecasters doubt." <strong>Company A</strong></p>
+        </blockquote>
+
+        <blockquote class="cs-blockquote">
+          <p>"We see a great opportunity in the first feature [explainability] because ML is powerful today. We're working on user trust in AI – explainability allows the user to let go and no longer touch/interfere with the signal." <strong>Company B</strong></p>
+        </blockquote>
+
+        <blockquote class="cs-blockquote cs-blockquote--last">
+          <p>"Regarding adding contextual information, it can be useful but for the people who develop the model. Since there's a risk of hallucination, it can be dangerous for users. They risk being very quickly disappointed. It might be valuable to develop this feature for data scientists who would log these events." <strong>Company C</strong></p>
+        </blockquote>
+
+        <div class="cs-kpis">
+          <p class="cs-kpis__label">↳ KPIs Ideas</p>
+          <ul class="cs-kpis__list">
+            <li>% rejected AI predictions</li>
+            <li>% altered AI predictions</li>
+            <li>gap between AI predictions and human predictions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- CLOSING -->
+  <div class="cb-closing">
+    <p class="cb-closing__nda">This project falls under NDA. For more details please reach out to me. User data has been anonymised.</p>
+    <div class="cb-closing__links">
+      <a href="./index.html#works" class="cb-closing__btn cb-closing__btn--primary">View all projects</a>
+      <a href="#" class="cb-closing__btn cb-closing__btn--secondary" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to top</a>
+    </div>
+  </div>
+
+  <script>
+    /* Scroll reveal — fade-in cards as they enter the viewport */
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('cb-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll('.cb-reveal').forEach((el) => revealObserver.observe(el));
+
+    /* TOC — track which card is in view */
+    const tocItems = document.querySelectorAll('.cb-toc__item');
+    const tocCards = Array.from(tocItems).map((item) =>
+      document.getElementById(item.dataset.target)
+    );
+
+    const tocObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            tocItems.forEach((item) => item.classList.remove('cb-toc__item--active'));
+            const match = Array.from(tocItems).find(
+              (item) => item.dataset.target === entry.target.id
+            );
+            if (match) match.classList.add('cb-toc__item--active');
+          }
+        });
+      },
+      { rootMargin: '-30% 0px -60% 0px' }
+    );
+
+    tocCards.forEach((card) => { if (card) tocObserver.observe(card); });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+@import './tokens-v2.css';
+
+/* ══════════════════════════════════════════
+   HERO — Full-viewport layered section
+══════════════════════════════════════════ */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  background-image: url('./assets/background_clean.png');
+  background-size: cover;
+  background-position: center;
+}
+
+/* ── Dark gradient overlay — left for text legibility ── */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(35, 22, 30, 0.75)  0%,
+    rgba(35, 22, 30, 0.60) 20%,
+    rgba(35, 22, 30, 0.20) 35%,
+    transparent            45%
+  );
+  z-index: var(--z-raised); /* 10 */
+}
+
+/* ══════════════════════════════════════════
+   LENA + CHARACTER — right side, bottom-anchored
+══════════════════════════════════════════ */
+
+.hero__lena {
+  position: absolute;
+  left: min(45%, 615px);
+  bottom: 0;
+  height: 95vh;
+  width: auto;
+  object-fit: contain;
+  object-position: bottom right;
+  z-index: 30;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ══════════════════════════════════════════
+   TEXT CONTENT — bottom-left
+══════════════════════════════════════════ */
+
+.hero__content {
+  position: absolute;
+  left: var(--layout-pad-x);
+  bottom: clamp(120px, 24vh, 260px);
+  max-width: 52%;
+  z-index: 15;
+}
+
+/* ── Name ── */
+.hero__name {
+  font-family: var(--font-display);
+  font-size: var(--text-hero); /* 128px — fixed on desktop/tablet */
+  font-weight: var(--weight-bold); /* 700 */
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-on-dark);
+  overflow: visible; /* intentional overflow — clips behind Lena's hair */
+  white-space: nowrap;
+}
+
+/* ── Bio paragraphs ── */
+.hero__bio {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  margin-top: var(--sp-1);
+  max-width: 460px;
+}
+
+.hero__bio p {
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-relaxed);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ══════════════════════════════════════════
+   SCROLL HINT — bottom-left
+══════════════════════════════════════════ */
+
+.hero__scroll {
+  position: absolute;
+  left: var(--layout-pad-x);
+  bottom: var(--sp-5);
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+  color: var(--color-on-dark);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+}
+
+.hero__scroll-icon {
+  display: inline-block;
+  height: 34px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.hero__scroll .material-symbols-outlined {
+  font-size: 34px;
+  line-height: 1;
+  display: block;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes scroll-bounce {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(6px); }
+  }
+
+  .hero__scroll .material-symbols-outlined {
+    animation: scroll-bounce 1.5s ease-in-out infinite;
+  }
+}
+
+/* ── Character mobile — hidden on desktop ── */
+.hero__character-mobile {
+  display: none;
+}
+
+
+/* ══════════════════════════════════════════
+   RESPONSIVE — ≤768px (mobile: light, minimal)
+══════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .hero {
+    background-image: url('./assets/background_mobile.png');
+    background-color: transparent;
+  }
+
+  /* Hide Lena photo and character */
+  .hero__lena,
+  .hero__character-mobile {
+    display: none;
+  }
+
+  .hero__name {
+    color: var(--color-on-dark);
+    font-size: clamp(88px, 22vw, 128px);
+  }
+
+  .hero__bio p {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .hero__scroll {
+    color: var(--color-on-dark);
+  }
+
+  .hero__content {
+    max-width: 70%;
+  }
+}
+

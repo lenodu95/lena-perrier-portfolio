@@ -1,0 +1,191 @@
+/* ============================================================
+   LENA PERRIER — Global Base Styles
+   Layer: reset → elements → layout
+   Scope: base only — component styles in separate files
+   Depends on: tokens-v2.css (imported below)
+   ============================================================ */
+
+@import './tokens-v2.css';
+
+
+/* ══════════════════════════════════════════
+   MINIMAL RESET
+   Box model, margins, inheritance.
+   Keeps browser defaults where they're useful.
+══════════════════════════════════════════ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles — re-apply only where semantics need them */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Prevent font size inflation on mobile */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Make media elements block and responsive by default */
+img,
+video,
+picture,
+svg,
+canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Inherit fonts for form controls (browsers don't do this by default) */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove default button appearance */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+/* ══════════════════════════════════════════
+   HTML
+══════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+
+/* ══════════════════════════════════════════
+   BODY
+══════════════════════════════════════════ */
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);          /* 15px */
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);   /* 1.45 */
+  color: var(--color-text-primary);     /* #23161E */
+  background-color: var(--color-surface); /* #F4F1EE */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* ══════════════════════════════════════════
+   HEADINGS — unstyled
+   All heading styles come from .text-* utility
+   classes defined in tokens-v2.css.
+   h1–h6 deliberately inherit from body.
+══════════════════════════════════════════ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+
+/* ══════════════════════════════════════════
+   PARAGRAPHS
+══════════════════════════════════════════ */
+
+p {
+  /* margin already reset above — no additional rules needed */
+}
+
+
+/* ══════════════════════════════════════════
+   LINKS
+══════════════════════════════════════════ */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+/* ══════════════════════════════════════════
+   SELECTION
+══════════════════════════════════════════ */
+
+::selection {
+  background-color: var(--color-orange-pale); /* #FDF0E8 */
+  color: var(--color-dark);                   /* #23161E */
+}
+
+
+/* ══════════════════════════════════════════
+   FOCUS
+   Custom outline for keyboard navigation.
+   Only shows on keyboard focus (:focus-visible),
+   not on mouse click.
+══════════════════════════════════════════ */
+
+:focus-visible {
+  outline: 2px solid var(--color-orange);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* Remove default browser focus ring — :focus-visible handles it */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+
+/* ══════════════════════════════════════════
+   LAYOUT — CONTAINER
+   Single centered column. Tokens are the source
+   of truth: 1160px max-width, fluid padding.
+══════════════════════════════════════════ */
+
+.container {
+  max-width: var(--layout-max-width);   /* 1160px */
+  padding-inline: var(--layout-pad-x); /* clamp(20px, 5vw, 72px) */
+  margin-inline: auto;
+  width: 100%;
+}
+
+
+/* ══════════════════════════════════════════
+   REDUCED MOTION — global catch-all
+   Must come last so it wins specificity.
+   Component-level animations are overridden here.
+══════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

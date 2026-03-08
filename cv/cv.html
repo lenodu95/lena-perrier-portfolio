@@ -24,16 +24,17 @@
     --muted:   #999999;
     --light:   #DDDDDD;
     --orange:  #E8834A;
+    --accent: #9146FF;
+    --accent-soft: #D4B8FF;
     --bg:      #F4F1EE;
     --label-w: 118px;
   }
 
   html, body {
-    zoom: 0.9;
-    width: 210mm;
-    min-height: 297mm;
-    margin: 0 auto;
-    background: var(--bg);
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    background: #FFFFFF;
     font-family: 'DM Sans', sans-serif;
     font-size: 12.5px;
     color: var(--ink);
@@ -43,33 +44,11 @@
   .page {
     background: #FFFFFF;
     min-height: 297mm;
-    max-width: 210mm;
-    margin-inline: auto;
+    width: 210mm;
+    margin: 0 auto;
     padding: 44px 48px 48px;
   }
 
-
-  /* ── Page header (above CV) ─────────────────── */
-  .cv-page-header {
-    text-align: center;
-    padding: 40px 0 32px;
-    font-family: 'DM Sans', sans-serif;
-  }
-
-  .cv-page-header__title {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--ink);
-    margin: 0 0 12px;
-  }
-
-  .cv-page-header__download {
-    font-size: 13px;
-    font-weight: 400;
-    color: var(--ink);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
 
   /* ── Header ─────────────────────────────────── */
   .header {
@@ -86,11 +65,11 @@
     font-weight: 800;
     letter-spacing: -0.5px;
     line-height: 1;
-    color: var(--ink);
+    color: var(--accent);
   }
 
   .header-name span {
-    color: var(--ink);
+    color: var(--accent);
   }
 
   .header-sub {
@@ -104,7 +83,7 @@
   .header-about {
     font-size: 12px;
     font-weight: 300;
-    color: #555555;
+    color: #3A3A3A;
     line-height: 1.65;
     margin-top: 10px;
     max-width: 100%;
@@ -112,7 +91,7 @@
 
   .header-about b {
     font-weight: 600;
-    color: var(--ink);
+    color: #5A2D9E;
   }
 
   .header-top {
@@ -129,28 +108,34 @@
   }
 
   .header-contact a {
-    color: var(--muted);
+    color: var(--accent);
     text-decoration: none;
   }
+
 
   /* ── 3-column entry layout ───────────────────── */
   .full-divider {
     border: none;
-    border-top: 1px solid #DEDEDE;
-    margin: 0 -48px;
+    height: 1px;
+    margin: 0;
+    padding: 0;
+    width: calc(100% + 96px);
+    margin-left: -48px;
+    background: linear-gradient(to right, var(--accent-soft), #DEDEDE 40%, #DEDEDE 60%, var(--accent-soft));
   }
 
   .section {
-    margin-bottom: 28px;
-    margin-top: 28px;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-block: 28px;
   }
 
-  .section:last-child { margin-bottom: 0; }
+  .section:last-child { padding-bottom: 0; }
 
   .entry {
     display: flex;
     gap: 0;
-    margin-bottom: 16px;
+    margin-bottom: 22px;
     align-items: flex-start;
   }
 
@@ -192,8 +177,8 @@
   .meta-role {
     font-size: 11px;
     font-style: italic;
-    font-weight: 300;
-    color: var(--muted);
+    font-weight: 400;
+    color: #777777;
     margin-bottom: 2px;
   }
 
@@ -216,7 +201,18 @@
 
   .entry-desc b {
     font-weight: 600;
-    color: var(--ink);
+    color: #5A2D9E;
+  }
+
+  .tools-line {
+    font-size: 10.5px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  .tools-line b {
+    font-weight: 600;
+    color: var(--muted);
   }
 
   /* ── Horizontal education row ────────────────── */
@@ -268,22 +264,13 @@
   /* ── Print ──────────────────────────────────── */
   @media print {
     @page { size: A4; margin: 0; }
-    html, body {
-    zoom: 0.9; width: 210mm; }
+    html, body { width: 210mm; background: #FFFFFF; }
+    .page { box-shadow: none; }
     * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    .cv-page-header { display: none; }
-  }
-
-  @media screen {
-    .page { box-shadow: 0 4px 32px rgba(0,0,0,0.10); }
   }
 </style>
 </head>
 <body>
-<div class="cv-page-header">
-  <p class="cv-page-header__title">My Resume</p>
-  <a href="./cv.pdf" download class="cv-page-header__download">Download PDF</a>
-</div>
 <div class="page">
 
   <!-- HEADER -->
@@ -296,7 +283,7 @@
         <a href="https://lenapxportfolio.netlify.app/">Portfolio</a>
       </div>
     </div>
-    <p class="header-about">I design interfaces people can trust. I specialise in AI-powered tools for enterprise users. My focus is <b>legibility</b>: giving users exactly what they need to trust the AI's output. I came to this from three years at Salesforce, where I learned what enterprise software actually costs its users.</p>
+    <p class="header-about">I design interfaces people can trust. I specialise in AI-powered tools for enterprise users. <br>My focus is <b>legibility</b>: giving users exactly what they need to trust the AI's output. <br>I came to this from three years at Salesforce, where I learned what enterprise software actually costs its users.</p>
   </header>
   <hr class="full-divider">
 
@@ -314,7 +301,7 @@
         <p>Owned the <b>full user flow</b> for an AI writing tool, from keyword input to article generation. Ran 3 rounds of usability testing with internal content teams, <b>built prototypes in Lovable and Claude Code</b>, and produced research reports that directly shaped the product roadmap.</p>
         <p>Led UX for a content management feature serving enterprise marketing teams, <b>delivering the first design direction the feature had seen</b> after months of planning and UX research. Iterated closely with the engineering team and shipped in product.</p>
         <p>Also designed high-fidelity wireframes in Figma and crafted visuals for the marketing team.</p>
-        <p><b>Tools:</b> Figma · Claude Code · Lovable · Langchain Agent Builder</p>
+        <p class="tools-line"><b>Tools:</b> Figma · Claude Code · Lovable · Langchain Agent Builder</p>
       </div>
     </div>
 
@@ -326,8 +313,8 @@
         <div class="meta-date">2024 — 2025</div>
       </div>
       <div class="entry-desc">
-        <p>Built an AI sales forecasting tool over 9 months using design thinking methodology, from extensive user research and co-creation with the team to a final interactive demo pitched at SAP San Francisco. Designed the full product UX/UI, ran <b>100+ user tests across 32 prototypes</b>, and crafted the interaction patterns that helped sales teams trust and act on AI predictions.</p>
-        <p><b>Tools:</b> Figma · Miro · Procreate · Notion</p>
+        <p>Built an AI sales forecasting tool over 9 months using design thinking methodology, from extensive user research and co-creation with the team to a final interactive demo pitched at SAP San Francisco. Designed the full product UX/UI, ran <b>100+ user tests across 32 prototypes</b>, and crafted the interaction patterns that helped sales teams <b>trust and act on AI predictions</b>.</p>
+        <p class="tools-line"><b>Tools:</b> Figma · Miro · Procreate · Notion</p>
       </div>
     </div>
 

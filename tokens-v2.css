@@ -11,6 +11,28 @@
    Change --font-display below once you've decided.
    ============================================================ */
 
+@font-face {
+  font-family: 'Neulis';
+  src: url('./assets/fonts/Neulis-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Neulis';
+  src: url('./assets/fonts/Neulis-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Neulis';
+  src: url('./assets/fonts/Neulis-ExtraBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Outfit:wght@600;700;800&display=swap');
 
 :root {

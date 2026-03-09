@@ -670,12 +670,12 @@
 ══════════════════════════════════════════ */
 
 @container (max-width: 850px) {
-  .cb-visuals-group,
-  .cleo-visuals-group { transform: translate(-50%, -50%) scale(0.92); }
+  .cb-visuals-group { transform: translate(-50%, -50%) scale(0.92); }
+  .cleo-visuals-group { transform: translate(-50%, -50%) scale(1.1); }
 }
 @container (max-width: 750px) {
-  .cb-visuals-group,
-  .cleo-visuals-group { transform: translate(-50%, -50%) scale(0.78); }
+  .cb-visuals-group { transform: translate(-50%, -50%) scale(0.78); }
+  .cleo-visuals-group { transform: translate(-50%, -50%) scale(0.95); }
 
   /* Hide side elements, enlarge main visual */
   .cb-visual-card,
@@ -684,7 +684,7 @@
   .cleo-visual-right { display: none; }
 
   .cb-visual-main   { width: 720px; }
-  .cleo-visual-main { width: 580px; }
+  .cleo-visual-main { width: 720px; }
 }
 @container (max-width: 620px) {
   .cb-visuals-group,
@@ -718,10 +718,6 @@
   .cleo-visual-left,
   .cleo-visual-right {
     display: none;
-  }
-
-  .cleo-visual-main {
-    width: 340px;
   }
 
   .prismic-visual-center {

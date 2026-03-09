@@ -985,6 +985,16 @@
   flex-shrink: 0;
 }
 
+@media (max-width: 480px) {
+  .closing {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+}
+
 /* ══════════════════════════════════════════
    SCROLL REVEAL
 ══════════════════════════════════════════ */

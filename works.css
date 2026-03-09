@@ -406,6 +406,12 @@
   border-color: #C8BEE8;
 }
 
+.prismic-card .cb-logos {
+  margin-top: 0;
+  padding-top: var(--sp-3);
+}
+
+
 .prismic-card .cb-inner--left {
   background:
     radial-gradient(ellipse at 5% 85%, rgba(124,58,237,0.15) 0%, transparent 55%),

@@ -68,7 +68,7 @@
     <div class="works__stack">
 
       <!-- Card 1 — Prismic -->
-      <div class="cb-card prismic-card reveal" onclick="document.getElementById('prismic-overlay').classList.add('prismic-overlay--open')" role="button" tabindex="0">
+      <a href="./prismic.html" class="cb-card prismic-card reveal">
         <div class="cb-panel cb-panel--left">
           <div class="cb-inner--left">
             <div class="cb-content">
@@ -92,7 +92,7 @@
             <img src="./assets/visual_center_prismic_card 19.38.27.png" class="prismic-visual-center" alt="" />
           </div>
         </div>
-      </div>
+      </a>
 
       <!-- Card 2 — Crystal Box -->
       <a href="./crystal-box.html" class="cb-card reveal">
@@ -230,16 +230,6 @@
     </div>
   </section>
 
-  <!-- Prismic overlay -->
-  <div id="prismic-overlay" class="prismic-overlay" onclick="if(event.target===this)this.classList.remove('prismic-overlay--open')">
-    <div class="prismic-overlay__card">
-      <img src="./assets/character.png" class="prismic-overlay__illustration" alt="" />
-      <p class="prismic-overlay__title">Oops, nothing to see here yet</p>
-      <p class="prismic-overlay__body">This case study is currently being written. Please reach out to me directly if you want to know more about this project.</p>
-      <button class="prismic-overlay__close" onclick="document.getElementById('prismic-overlay').classList.remove('prismic-overlay--open')">Got it</button>
-    </div>
-  </div>
-
   <script>
     const nav = document.querySelector('.nav');
     const hero = document.querySelector('.hero');
@@ -250,21 +240,6 @@
     );
 
     observer.observe(hero);
-
-    /* Prismic card — open overlay with Enter/Space */
-    document.querySelector('.prismic-card').addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        document.getElementById('prismic-overlay').classList.add('prismic-overlay--open');
-      }
-    });
-
-    /* Close overlay with Escape */
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        document.getElementById('prismic-overlay').classList.remove('prismic-overlay--open');
-      }
-    });
 
     /* Scroll reveal */
     const revealObserver = new IntersectionObserver(

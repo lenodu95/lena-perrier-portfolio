@@ -206,6 +206,7 @@
   align-items: stretch;
   gap: 12px;
   text-decoration: none;
+  height: 460px;
 }
 
 .cb-card:hover {
@@ -402,14 +403,17 @@
   border-color: #D0C4E8;
 }
 
+.prismic-card .cb-inner--left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .prismic-card .cb-panel--right {
   border-color: #C8BEE8;
 }
 
-.prismic-card .cb-logos {
-  margin-top: 0;
-  padding-top: var(--sp-3);
-}
+
 
 
 .prismic-card .cb-inner--left {
@@ -502,91 +506,6 @@
 }
 
 .prismic-card .cb-logos img { filter: none; }
-
-
-/* ════════════════════════════════════════
-   PRISMIC OVERLAY
-   ════════════════════════════════════════ */
-
-.prismic-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: var(--z-modal);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(35, 22, 30, 0.4);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity var(--transition-base);
-}
-
-.prismic-overlay--open {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.prismic-overlay__card {
-  background: var(--color-card);
-  border-radius: var(--card-radius);
-  padding: var(--sp-5);
-  max-width: 400px;
-  width: calc(100% - 48px);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-2);
-  box-shadow: var(--shadow-lg);
-  transform: translateY(12px);
-  transition: transform var(--transition-base);
-}
-
-.prismic-overlay--open .prismic-overlay__card {
-  transform: translateY(0);
-}
-
-.prismic-overlay__illustration {
-  width: 120px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-.prismic-overlay__title {
-  font-family: var(--font-body);
-  font-size: var(--text-lg);
-  font-weight: var(--weight-semibold);
-  color: var(--color-text-primary);
-}
-
-.prismic-overlay__body {
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  font-weight: var(--weight-regular);
-  line-height: var(--leading-relaxed);
-  color: var(--color-text-secondary);
-}
-
-.prismic-overlay__close {
-  align-self: center;
-  margin-top: var(--sp-1);
-  padding: 10px 24px;
-  background: var(--color-dark);
-  color: var(--color-on-dark);
-  border: none;
-  border-radius: var(--nav-btn-radius);
-  font-family: var(--font-body);
-  font-size: var(--nav-btn-font-size);
-  font-weight: var(--weight-medium);
-  cursor: pointer;
-  transition: background var(--transition-fast);
-}
-
-.prismic-overlay__close:hover {
-  background: var(--color-dark-hover);
-}
 
 
 /* ════════════════════════════════════════
@@ -987,14 +906,29 @@
   flex-shrink: 0;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .closing {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-}
+
+  .closing__content {
+    align-items: center;
+    width: 100%;
+    padding-inline: var(--layout-pad-x);
+  }
+
+  .closing__title {
+    text-align: center;
+  }
+
+  .closing__illustration {
+    width: 100%;
+    max-width: 400px;
+    left: 0;
+  }
 }
 
 /* ══════════════════════════════════════════

@@ -120,8 +120,8 @@
         <h2 class="cs-card__title cs-card__title--lg">SEO-optimized pages were the top requested AI use case</h2>
       </div>
       <div class="cs-card__right cs-card__right--body">
-        <p class="cs-card__body">The UX research team spoke with 15 content marketers and found that SEO is not just about creating more content. Companies invest in a CMS, pay freelancers, build content calendars, but none of it matters if no one clicks on the pages.</p>
-        <p class="cs-card__body">Existing AI writing tools make this worse. You enter a keyword and instantly get an article, but with no visibility into what sources were used or why this specific structure was chosen. <span class="cs-medium">Marketers wanted AI that helps them rank, not just write.</span></p>
+        <p class="cs-card__body">The UX research team spoke with 15 content marketers. Companies were already investing in content through freelancers and publishing tools. The pages still weren't ranking.</p>
+        <p class="cs-card__body">Existing AI tools didn't help. You enter a keyword and get an article back, with no way to know why it was written that way or whether it would work.</p>
       </div>
     </div>
 
@@ -133,8 +133,8 @@
           <h2 class="cs-card__title cs-card__title--lg">One marketer used 18 agents just to get a decent article</h2>
         </div>
         <div class="cs-card__right cs-card__right--body">
-          <p class="cs-card__body">When I interviewed one of our internal content marketers, I expected a simple workflow. Instead, he showed me 18 agents in his Clay setup. Each one handled a different piece of the SEO process, but together they crafted an article that had the right structure, the right depth, and actually matched what he had in mind.</p>
-          <p class="cs-card__body">The other marketer relied on a freelancer and manual review in Notion. These two workflows were different but underlined the same need: to <strong>trust the output before it was written</strong>, not fix it after.</p>
+          <p class="cs-card__body">When I interviewed one of our internal content marketers, I expected a simple workflow. Instead, he showed me 18 agents in his Clay setup. Each one handled a different piece of the SEO process. The result was an article he actually trusted.</p>
+          <p class="cs-card__body">The other marketer relied on a freelancer and manual review in Notion. A different process but still with the same problem: <strong>not wanting to spend hours correcting an article</strong> after the fact.</p>
         </div>
       </div>
       <div class="cs-card__bottom">
@@ -154,8 +154,7 @@
       <div class="cs-card__right cs-card__right--body">
         <p class="cs-subheading">Hypothesis</p>
         <p class="cs-card__body">Marketers would rather spend time making sure the AI has all the information it needs upfront than receive a full article and spend hours reading and correcting it.</p>
-        <p class="cs-card__body">The SEO agent could break content creation into three transparent steps: research, outline, then article.</p>
-        <p class="cs-card__body">Each step gives the marketer a checkpoint to review and approve before the AI moves forward.</p>
+        <p class="cs-card__body">The SEO agent breaks content creation into three transparent steps:<br><br><span style="font-weight:500">Research → Outline → Article</span></p>
       </div>
     </div>
 
@@ -190,13 +189,12 @@
       <div class="cs-card__top">
         <div class="cs-card__left">
           <p class="cs-card__label">Design Exploration 1</p>
-          <h2 class="cs-card__title cs-card__title--lg">I assumed research would be a background step. Users proved me wrong.</h2>
+          <h2 class="cs-card__title cs-card__title--lg">Competitive research went from a background step to the most important one</h2>
         </div>
         <div class="cs-card__right cs-card__right--body">
-          <p class="cs-card__body">I designed an agent that analyses top-ranking pages for a given keyword: why they rank well, what topics they still miss, and what questions people ask. It then turns this into a structured outline and then into an article.</p>
-          <p class="cs-card__body">The first test was informal. I sat with a content marketer at Prismic and showed him the raw agent output.</p>
-          <p class="cs-card__body">I assumed he would quickly skim the research and focus on the outline, but he actually deep-dived into reading the research step.</p>
-          <p class="cs-card__body">I had designed the competitive research as a background process, but in reality <span class="cs-medium">users wanted it visible</span>. I rebuilt the UX flow to put it front and centre, where <span class="cs-medium">marketers can review, and even edit and add to the research.</span></p>
+          <p class="cs-card__body">I built an agent that analyses top-ranking pages for a given keyword, identifies what they miss, and generates a structured article from those gaps.</p>
+          <p class="cs-card__body">The first test was informal. I sat with Tosin, one of Prismic's content marketers, and showed him the raw output with no interface.</p>
+          <p class="cs-card__body">I expected him to skip straight to the outline. He actually spent most of the session reading the research. Like what pages had the agent looked at. Or what questions competitors were failing to answer. He wanted to <strong>evaluate the sources before trusting</strong> anything the agent had written.</p>
         </div>
       </div>
 
@@ -234,14 +232,14 @@
       <div class="cs-card__top">
         <div class="cs-card__left">
           <p class="cs-card__label">Design Exploration 2</p>
-          <h2 class="cs-card__title cs-card__title--lg">Making SEO hygiene go on auto-pilot</h2>
+          <h2 class="cs-card__title cs-card__title--lg">Good links don't come last</h2>
         </div>
         <div class="cs-card__right cs-card__right--body">
           <div class="cs-subgroup">
             <p class="cs-subheading">Adding internal and external link suggestions to the outline</p>
-            <p class="cs-card__body">Both users flagged link-building as a high-value, high-effort task they often skip.</p>
-            <p class="cs-card__body">At first I put linking suggestions at the end of the flow, mirroring what I had seen on Clay. But user tests revealed this was too late. By then the structure was set and links felt like an afterthought.</p>
-            <p class="cs-card__body">I moved link suggestions into the outline step. Users can accept or reject each suggestion before the article is written.</p>
+            <p class="cs-card__body">Both users flagged link-building as something they knew mattered but rarely had time for.</p>
+            <p class="cs-card__body">I initially put link suggestions at the end of the flow, after the article was generated just like in Clay. Testing showed this was too late. The structure was already set and adding links at that point changed nothing.</p>
+            <p class="cs-card__body">I moved them into the outline step. Before the article is written, users can see suggested internal and external links per section and choose what to keep.</p>
           </div>
 
         </div>
@@ -282,10 +280,10 @@
         <div class="cs-subgroup">
           <p class="cs-subheading">The SEO agent's future</p>
           <p class="cs-card__body">The feature is currently being built by the engineering team. For smoother development handover, I replicated the fully interactive prototype directly in the Prismic codebase using Claude Code.</p>
-          <p class="cs-card__body">One need that surfaced during testing and remains to be addressed: <span class="cs-medium">how to update already existing content.</span></p>
+          <p class="cs-card__body">Testing raised one open question: <span class="cs-medium">how to update content that already exists.</span></p>
         </div>
         <div class="cs-subgroup">
-          <p class="cs-subheading">KPIs to look for</p>
+          <p class="cs-subheading">Measuring success</p>
           <p class="cs-card__body">The metric to watch post-launch: <span class="cs-medium">how much time marketers spend between starting an article and hitting publish.</span> If the agent is doing its job, that number should drop significantly without sacrificing the quality of what ranks.</p>
         </div>
       </div>

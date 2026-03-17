@@ -50,7 +50,8 @@
     <div class="hero__content">
       <h1 class="hero__name">Lena<br>Perrier</h1>
       <div class="hero__bio">
-        <p>I design AI products people actually want to use. Currently at Prismic, helping marketers create content that lands.</p>
+        <p>I design AI products people actually want to use.</p>
+        <p class="hero__bio-secondary">Currently at Prismic, helping marketers create content that lands.</p>
       </div>
     </div>
 
@@ -89,7 +90,10 @@
         </div>
         <div class="cb-panel cb-panel--right">
           <div class="cb-inner--right">
-            <img src="./assets/visual_center_prismic_card 19.38.27.png" class="prismic-visual-center" alt="" />
+            <div class="prismic-mockup">
+              <img src="./assets/Prismic homepage/chat_card.png" class="prismic-el prismic-el--chat" alt="" />
+              <img src="./assets/Prismic homepage/outline_card.png" class="prismic-el prismic-el--outline" alt="" />
+            </div>
           </div>
         </div>
       </a>
@@ -188,12 +192,12 @@
           <div class="gallery__text-box">
             <h2 class="gallery__text-title">Designing less boring software</h2>
             <div class="gallery__text-body">
-              <p>I came to product design after three years at Salesforce, where I learned what enterprise software actually costs its users.</p>
-              <p>Since then, I have been designing for users that have 7 screens open at the same time. I focus on legibility and on giving users the right information to trust the tools they rely on, without ever compromising on the fun, appealing side of design.</p>
+              <p>I came to product design after <span style="font-weight:500">three years at Salesforce</span>, where I learned what enterprise software actually costs its users.</p>
+              <p>Since then, I have been designing for users that have 7 screens open at the same time. I focus on <span style="font-weight:500">legibility</span> and on giving users the right information to trust the tools they rely on, without ever compromising on <span style="font-weight:500">the fun, appealing side of design</span>.</p>
             </div>
             <div class="gallery__buttons">
-              <a href="./about.html" class="nav-btn nav-btn--text">Learn More About Me</a>
-              <a href="./resume.html" class="nav-btn nav-btn--resume">Open Resume</a>
+              <a href="./about.html" class="nav-btn nav-btn--resume">Learn More About Me</a>
+              <a href="./resume.html" class="nav-btn nav-btn--text">Open Resume</a>
             </div>
           </div>
         </div>
@@ -256,5 +260,6 @@
 
     document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
   </script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

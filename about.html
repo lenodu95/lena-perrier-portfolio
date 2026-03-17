@@ -152,5 +152,64 @@
     </div>
   </section>
 
+  <script>
+  (function () {
+    let dragged = null;
+    let offsetX = 0;
+    let offsetY = 0;
+    let topZ = 10;
+    const rotation = new Map();
+
+    document.querySelectorAll('.polaroid').forEach(function (el) {
+      const style = getComputedStyle(el);
+      const match = style.transform.match(/matrix\(([^)]+)\)/);
+      rotation.set(el, match ? el.style.transform || '' : '');
+
+      el.addEventListener('mousedown', start);
+      el.addEventListener('touchstart', start, { passive: false });
+    });
+
+    function start(e) {
+      e.preventDefault();
+      dragged = this;
+      const point = e.touches ? e.touches[0] : e;
+      const rect = dragged.getBoundingClientRect();
+      offsetX = point.clientX - rect.left;
+      offsetY = point.clientY - rect.top;
+
+      topZ++;
+      dragged.style.zIndex = topZ;
+      dragged.classList.add('is-dragging');
+
+      document.addEventListener('mousemove', move);
+      document.addEventListener('mouseup', end);
+      document.addEventListener('touchmove', move, { passive: false });
+      document.addEventListener('touchend', end);
+    }
+
+    function move(e) {
+      if (!dragged) return;
+      e.preventDefault();
+      const point = e.touches ? e.touches[0] : e;
+      const parent = dragged.parentElement.getBoundingClientRect();
+      const x = point.clientX - parent.left - offsetX;
+      const y = point.clientY - parent.top - offsetY;
+
+      dragged.style.left = x + 'px';
+      dragged.style.right = 'auto';
+      dragged.style.top = y + 'px';
+    }
+
+    function end() {
+      if (!dragged) return;
+      dragged.classList.remove('is-dragging');
+      dragged = null;
+      document.removeEventListener('mousemove', move);
+      document.removeEventListener('mouseup', end);
+      document.removeEventListener('touchmove', move);
+      document.removeEventListener('touchend', end);
+    }
+  })();
+  </script>
 </body>
 </html>

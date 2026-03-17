@@ -8,3 +8,4 @@ Thumbs.db
 # Test/scratch files
 test-*.html
 design-audit.md
+.vercel

@@ -22,12 +22,12 @@
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(35, 22, 30, 0.75)  0%,
-    rgba(35, 22, 30, 0.60) 20%,
-    rgba(35, 22, 30, 0.20) 35%,
-    transparent            45%
+    rgba(30, 18, 25, 0.92)  0%,
+    rgba(30, 18, 25, 0.78) 22%,
+    rgba(30, 18, 25, 0.40) 40%,
+    transparent            58%
   );
-  z-index: var(--z-raised); /* 10 */
+  z-index: 35; /* above photo (z:30), below text content */
 }
 
 /* ══════════════════════════════════════════
@@ -36,7 +36,7 @@
 
 .hero__lena {
   position: absolute;
-  left: min(45%, 615px);
+  left: min(55%, 680px);
   bottom: 0;
   height: 95vh;
   width: auto;
@@ -56,7 +56,7 @@
   left: var(--layout-pad-x);
   bottom: clamp(120px, 24vh, 260px);
   max-width: 52%;
-  z-index: 15;
+  z-index: 40;
 }
 
 /* ── Name ── */
@@ -82,10 +82,17 @@
 
 .hero__bio p {
   font-family: var(--font-body);
-  font-size: var(--text-md);
+  font-size: 20px;
   font-weight: var(--weight-medium);
   line-height: var(--leading-relaxed);
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.hero__bio .hero__bio-secondary {
+  font-size: 16px;
+  font-weight: var(--weight-regular);
+  color: rgba(255, 255, 255, 0.65);
 }
 
 /* ══════════════════════════════════════════
@@ -96,7 +103,7 @@
   position: absolute;
   left: var(--layout-pad-x);
   bottom: var(--sp-5);
-  z-index: 15;
+  z-index: 40;
   display: flex;
   align-items: center;
   gap: var(--sp-1);

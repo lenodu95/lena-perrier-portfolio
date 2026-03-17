@@ -42,26 +42,48 @@
 .polaroid {
   position: absolute;
   height: auto;
-  pointer-events: none;
   user-select: none;
+  cursor: grab;
+  background: transparent;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.polaroid:active,
+.polaroid:focus {
+  background: transparent;
+  outline: none;
+}
+
+.polaroid.is-dragging {
+  cursor: grabbing;
+  transform: scale(1.05) !important;
+  box-shadow: none;
+  background: transparent;
+  outline: none;
+  transition: none;
 }
 
 .polaroid--large { width: 280px; }
 .polaroid--small { width: 230px; }
 .polaroid--9     { width: 207px; }
 
-/* Spread across full width; --5 (pale blue) bleeds left, --4 (green) bleeds right */
-/* Overlapping pairs: --3+--7 (flashy pink & purple), --8+--10 (orange & yellow) */
-.polaroid--1  { left: 8%;    top: 6%;  transform: rotate(-4deg); z-index: 3; }
-.polaroid--2  { left: 24%;   top: 3%;  transform: rotate(3deg);  z-index: 4; }
-.polaroid--3  { left: 40%;   top: 4%;  transform: rotate(-2deg); z-index: 6; } /* pair A — on top */
-.polaroid--4  { right: -4%;  top: 2%;  transform: rotate(5deg);  z-index: 4; } /* bleeds right */
-.polaroid--5  { left: -5%;   top: 38%; transform: rotate(-6deg); z-index: 2; } /* bleeds left */
-.polaroid--6  { left: 18%;   top: 44%; transform: rotate(4deg);  z-index: 6; }
-.polaroid--7  { left: 45%;   top: 16%; transform: rotate(-3deg); z-index: 5; } /* pair A — under */
-.polaroid--8  { left: 65%;   top: 30%; transform: rotate(6deg);  z-index: 4; } /* pair B — under */
-.polaroid--9  { left: 36%;   top: 54%; transform: rotate(-2deg); z-index: 7; }
-.polaroid--10 { left: 60%;   top: 44%; transform: rotate(4deg);  z-index: 5; } /* pair B — on top */
+/* Spread across full width — balanced left/right, selective overlap */
+/* Pair A: --1 (photo) tucks under --2 (illustration) — top left grouping */
+/* Pair B: --8 (orange) overlaps --10 (yellow) ~15% — bottom right grouping */
+/* Pair C: --5 (pale blue) tucks under --9 (blue) — left-center grouping */
+/* Remaining polaroids stand alone with breathing room */
+.polaroid--1  { left: 4%;    top: 5%;  transform: rotate(-8deg);  z-index: 3; }
+.polaroid--2  { left: 18%;   top: 3%;  transform: rotate(5deg);   z-index: 4; } /* pair A — overlaps --1 */
+.polaroid--3  { left: 42%;   top: 3%;  transform: rotate(-12deg); z-index: 3; } /* standalone */
+.polaroid--4  { right: -2%;  top: 4%;  transform: rotate(10deg);  z-index: 3; } /* standalone, bleeds right */
+.polaroid--5  { left: -3%;   top: 38%; transform: rotate(-6deg);  z-index: 4; } /* pair C — under */
+.polaroid--6  { left: 56%;   top: 46%; transform: rotate(-7deg);  z-index: 3; } /* standalone */
+.polaroid--7  { left: 60%;   top: 6%;  transform: rotate(4deg);   z-index: 3; } /* standalone */
+.polaroid--8  { left: 70%;   top: 32%; transform: rotate(-15deg); z-index: 5; } /* pair B — on top */
+.polaroid--9  { left: 12%;   top: 48%; transform: rotate(11deg);  z-index: 5; } /* pair C — overlaps --5 */
+.polaroid--10 { left: 62%;   top: 42%; transform: rotate(3deg);   z-index: 4; } /* pair B — under */
 
 /* ══════════════════════════════════════════
    LENA'S UNIVERSE BOX

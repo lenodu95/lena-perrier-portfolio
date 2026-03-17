@@ -179,7 +179,7 @@
   /* Card layout */
   --card-radius:          16px;
   --card-padding:         var(--sp-5);   /* 40px internal padding */
-  --card-gap:             var(--sp-4);   /* 32px between cards */
+  --card-gap:             var(--sp-5);   /* 48px between cards */
 
   /* Card backgrounds — NOT defined here intentionally.
      Each project card visual has a unique background:

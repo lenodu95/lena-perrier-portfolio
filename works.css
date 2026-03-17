@@ -474,35 +474,50 @@
   display: block;
 }
 
-/* Placeholder screen */
-.prismic-placeholder {
-  width: 70%;
-  height: 65%;
-  background: rgba(255,255,255,0.3);
-  border-radius: var(--radius-md);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.4);
-  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+/* ── Prismic mockup — fixed-pixel group, scales via container queries ── */
+.prismic-mockup {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  width: 750px;
+  height: 400px;
   z-index: 1;
   transition: transform 0.4s ease-out;
 }
 
-.prismic-card:hover .prismic-placeholder {
-  transform: translateY(-8px);
-}
-
-.prismic-visual-center {
-  width: 84%;
+.prismic-el {
+  position: absolute;
   height: auto;
-  display: block;
-  position: relative;
-  top: 8px;
-  z-index: 1;
   transition: transform 0.4s ease-out;
 }
 
-.prismic-card:hover .prismic-visual-center {
-  transform: translateY(-14px);
+.prismic-el--chat {
+  width: 230px;
+  left: 0px;
+  bottom: 6px;
+  top: 80px;
+  z-index: 1;
+}
+
+.prismic-el--outline {
+  width: 650px;
+  top: -10px;
+  left: 100px;
+  z-index: 2;
+}
+
+/* Hover — lift entire group + slight rotation on cards */
+.prismic-card:hover .prismic-mockup {
+  transform: translate(-50%, -50%) translateY(-14px);
+}
+
+.prismic-card:hover .prismic-el--chat {
+  transform: translateY(-14px) rotate(-2deg);
+}
+
+.prismic-card:hover .prismic-el--outline {
+  transform: translateY(-14px) rotate(2deg);
 }
 
 .prismic-card .cb-logos img { filter: none; }
@@ -597,31 +612,52 @@
 @container (max-width: 850px) {
   .cb-visuals-group { transform: translate(-50%, -50%) scale(0.92); }
   .cleo-visuals-group { transform: translate(-50%, -50%) scale(1.1); }
+  .prismic-mockup { transform: translate(-50%, -50%) scale(0.92); }
+  .prismic-card:hover .prismic-mockup { transform: translate(-50%, -50%) scale(0.92) translateY(-14px); }
 }
 @container (max-width: 750px) {
   .cb-visuals-group { transform: translate(-50%, -50%) scale(0.78); }
   .cleo-visuals-group { transform: translate(-50%, -50%) scale(0.95); }
+  .prismic-mockup { transform: translate(-50%, -50%) scale(0.78); }
+  .prismic-card:hover .prismic-mockup { transform: translate(-50%, -50%) scale(0.78) translateY(-14px); }
 
   /* Hide side elements, enlarge main visual */
   .cb-visual-card,
   .cb-visual-badge,
   .cleo-visual-left,
-  .cleo-visual-right { display: none; }
+  .cleo-visual-right,
+  .prismic-el--chat { display: none; }
 
-  .cb-visual-main   { width: 720px; }
-  .cleo-visual-main { width: 720px; }
+  .cb-visual-main   { width: 950px; }
+  .cleo-visual-main { width: 480px; }
+
+  .prismic-mockup { left: 50%; top: 50%; }
+  .prismic-el--outline {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .prismic-card:hover .prismic-el--outline {
+    transform: translate(-50%, calc(-50% - 4px));
+  }
 }
 @container (max-width: 620px) {
   .cb-visuals-group,
-  .cleo-visuals-group { transform: translate(-50%, -50%) scale(0.64); }
+  .cleo-visuals-group,
+  .prismic-mockup { transform: translate(-50%, -50%) scale(0.64); }
+  .prismic-card:hover .prismic-mockup { transform: translate(-50%, -50%) scale(0.64) translateY(-14px); }
 }
 @container (max-width: 500px) {
   .cb-visuals-group,
-  .cleo-visuals-group { transform: translate(-50%, -50%) scale(0.50); }
+  .cleo-visuals-group,
+  .prismic-mockup { transform: translate(-50%, -50%) scale(0.50); }
+  .prismic-card:hover .prismic-mockup { transform: translate(-50%, -50%) scale(0.50) translateY(-14px); }
 }
 @container (max-width: 380px) {
   .cb-visuals-group,
-  .cleo-visuals-group { transform: translate(-50%, -50%) scale(0.38); }
+  .cleo-visuals-group,
+  .prismic-mockup { transform: translate(-50%, -50%) scale(0.38); }
+  .prismic-card:hover .prismic-mockup { transform: translate(-50%, -50%) scale(0.38) translateY(-14px); }
 }
 
 /* Re-apply hover lifts on top of the scaled group's children */
@@ -645,15 +681,6 @@
     display: none;
   }
 
-  .prismic-visual-center {
-    width: 95%;
-  }
-}
-
-@media (max-width: 1300px) {
-  .prismic-visual-center {
-    width: 95%;
-  }
 }
 
 @media (max-width: 768px) {
@@ -693,6 +720,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: left center;
   display: block;
 }
 
@@ -742,6 +770,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 16px;
 }
 

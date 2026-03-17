@@ -507,6 +507,10 @@
   z-index: 2;
 }
 
+/* Show large outline by default, hide small */
+.prismic-el--outline-sm { display: none; }
+.prismic-el--outline-lg { display: block; }
+
 /* Hover — lift entire group + slight rotation on cards */
 .prismic-card:hover .prismic-mockup {
   transform: translate(-50%, -50%) translateY(-14px);
@@ -628,7 +632,10 @@
   .cleo-visual-right,
   .prismic-el--chat { display: none; }
 
-  .cb-visual-main   { width: 950px; }
+  .prismic-el--outline-lg { display: none; }
+  .prismic-el--outline-sm { display: block; }
+
+  .cb-visual-main   { width: 720px; }
   .cleo-visual-main { width: 480px; }
 
   .prismic-mockup { left: 50%; top: 50%; }

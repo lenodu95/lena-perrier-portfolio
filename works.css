@@ -480,8 +480,8 @@
   left: 50%;
   top: 60%;
   transform: translate(-50%, -50%);
-  width: 750px;
-  height: 400px;
+  width: 660px;
+  height: 360px;
   z-index: 1;
   transition: transform 0.4s ease-out;
 }
@@ -501,7 +501,7 @@
 }
 
 .prismic-el--outline {
-  width: 650px;
+  width: 560px;
   top: -10px;
   left: 100px;
   z-index: 2;

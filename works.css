@@ -590,14 +590,14 @@
 }
 
 .cleo-visual-left {
-  left: 0;
+  left: 60px;
   top: 40px;
   width: 230px;
   z-index: 1;
 }
 
 .cleo-visual-right {
-  left: 550px;
+  left: 500px;
   top: 40px;
   width: 264px;
   z-index: 3;
@@ -615,15 +615,15 @@
 
 @container (max-width: 850px) {
   .cb-visuals-group { transform: translate(-50%, -50%) scale(0.92); }
-  .cleo-visuals-group { transform: translate(-50%, -50%) scale(1.1); }
-  .prismic-mockup { transform: translate(-50%, -50%) scale(0.92); }
-  .prismic-card:hover .prismic-mockup { transform: translate(-50%, -50%) scale(0.92) translateY(-14px); }
+  .cleo-visuals-group { transform: translate(-50%, -50%) scale(1.15); }
+  .prismic-mockup { transform: translate(-50%, -50%) scale(1.05); }
+  .prismic-card:hover .prismic-mockup { transform: translate(-50%, -50%) scale(1.05) translateY(-14px); }
 }
 @container (max-width: 750px) {
   .cb-visuals-group { transform: translate(-50%, -50%) scale(0.78); }
   .cleo-visuals-group { transform: translate(-50%, -50%) scale(0.95); }
-  .prismic-mockup { transform: translate(-50%, -50%) scale(0.78); }
-  .prismic-card:hover .prismic-mockup { transform: translate(-50%, -50%) scale(0.78) translateY(-14px); }
+  .prismic-mockup { transform: translate(-50%, -50%) scale(0.82); }
+  .prismic-card:hover .prismic-mockup { transform: translate(-50%, -50%) scale(0.82) translateY(-14px); }
 
   /* Hide side elements, enlarge main visual */
   .cb-visual-card,
@@ -688,6 +688,9 @@
     display: none;
   }
 
+  .cleo-visual-main {
+    width: 620px;
+  }
 }
 
 @media (max-width: 768px) {

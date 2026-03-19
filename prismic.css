@@ -686,12 +686,12 @@
   }
 
   .cb-hero__image-wrapper {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 16 / 10;
   }
 
   .cb-hero__dashboard {
-    width: 95%;
-    right: -8%;
+    width: 85%;
+    right: -5%;
   }
 
   .cs-quote-panel {

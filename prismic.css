@@ -677,8 +677,8 @@
 
 @media (max-width: 768px) {
   .cb-hero {
-    padding-top: calc(var(--sp-8) + 48px);
-    padding-bottom: var(--sp-8);
+    padding-top: calc(var(--sp-6) + 48px);
+    padding-bottom: var(--sp-4);
   }
 
   .cb-hero__headline {
@@ -686,7 +686,8 @@
   }
 
   .cb-hero__image-wrapper {
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 948 / 768;
+    margin-top: var(--sp-5);
   }
 
   .cb-hero__dashboard {
@@ -773,6 +774,16 @@
 
   .cb-hero__image-wrapper {
     border-radius: var(--radius-md);
+    aspect-ratio: 4 / 3;
+    margin-top: var(--sp-3);
+  }
+
+  .cb-hero {
+    padding-bottom: var(--sp-3);
+  }
+
+  .cb-hero__dashboard {
+    width: 82%;
   }
 
   .cs-quote-card__photo {
